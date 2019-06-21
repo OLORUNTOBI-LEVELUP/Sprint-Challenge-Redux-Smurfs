@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Smurf from "./Smurf"
+import SmurfForm from "./SmurfForm";
 import { fetchSmurfs, addSmurf } from "../actions/index"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
@@ -22,6 +23,7 @@ class App extends Component {
     }
     return (
       <div className="App">
+       <SmurfForm addSmurf={addSmurf} />
         {smurfs &&
           smurfs.length > 0 &&
           smurfs.map(smurf => (
@@ -38,13 +40,15 @@ const mapStateToProps = state => {
   return {
     smurfs: state.smurfs,
     fetchingSmurfs: state.fetchingSmurfs,
+    addingSmurf: state.addingSmurfs,
   }
 }
 
 const matchDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      fetchSmurfs
+      fetchSmurfs,
+      addSmurf
     },
     dispatch
   )
