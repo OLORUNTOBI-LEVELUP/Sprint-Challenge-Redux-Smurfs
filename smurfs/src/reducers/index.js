@@ -58,6 +58,22 @@ export const smurfsReducer = (state = initialState, action) => {
         ...state,
         addingSmurf: false
       }
+      case types.DELETE_SMURF_START:
+      return {
+        ...state,
+        deletingSmurf: true
+      }
+    case types.DELETE_SMURF_SUCCESSFUL: {
+      return {
+        ...state,
+        smurfs: action.payload
+      }
+    }
+    case types.DELETE_SMURF_END:
+      return {
+        ...state,
+        deletingSmurf: false
+      }
     default:
       return state
   }
