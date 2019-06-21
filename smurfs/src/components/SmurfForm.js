@@ -17,12 +17,7 @@ class SmurfForm extends Component {
         this.nameRef.current.value = ""
         this.ageRef.current.value = ""
         this.heightRef.current.value = ""
-    }else {
-        this.setState({
-          error:
-            "Ya gone did smurfed! Name/Age/Height are all required to create a smurf in the smurf DB."
-        })
-      }
+    }
   
   }
 

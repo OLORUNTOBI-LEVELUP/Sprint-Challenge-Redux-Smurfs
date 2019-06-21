@@ -17,6 +17,10 @@ export const DELETE_SMURF_START = "DELETE_SMURF_START"
 export const DELETE_SMURF_SUCCESSFUL = "DELETE_SMURF_SUCCESSFUL"
 export const DELETE_SMURF_END = "DELETE_SMURF_END"
 
+export const UPDATE_SMURF_START = "MODIFY_SMURF_START"
+export const UPDATE_SMURF_SUCCESSFUL = "DELETE_SMURF_SUCCESSFUL"
+export const UPDATE_SMURF_END = "MODIFY_SMURF_END"
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
@@ -54,4 +58,13 @@ export const deleteSmurf = id => dispatch => {
   })
 
   dispatch({ type: DELETE_SMURF_END })
+}
+
+export const updateSmurf = id => dispatch => {
+  dispatch({ type: UPDATE_SMURF_START })
+  axios.delete(`http://localhost:3333/smurfs/${id}`).then(res => {
+    dispatch({ type: UPDATE_SMURF_SUCCESSFUL, payload: res.data })
+  })
+
+  dispatch({ type: UPDATE_SMURF_END })
 }

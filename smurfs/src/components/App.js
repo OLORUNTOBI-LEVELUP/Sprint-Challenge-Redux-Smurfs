@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Smurf from "./Smurf"
 import SmurfForm from "./SmurfForm";
-import { fetchSmurfs, addSmurf, deleteSmurf } from "../actions/index"
+import { fetchSmurfs, addSmurf, deleteSmurf, updateSmurf } from "../actions/index"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 /*
@@ -17,7 +17,7 @@ class App extends Component {
     this.props.fetchSmurfs();
   }
   render() {
-    const { smurfs, fetchingSmurfs, addSmurf, deleteSmurf } = this.props
+    const { smurfs, fetchingSmurfs, addSmurf, deleteSmurf,updateSmurf } = this.props
     if (fetchingSmurfs) {
       return <div>Loading Smurfs...</div>
     }
@@ -31,6 +31,7 @@ class App extends Component {
               smurf={smurf}
               key={smurf.name}
               deleteSmurf={deleteSmurf}
+              updateSmurf={updateSmurf}
             />
           ))}
       </div>
@@ -42,7 +43,8 @@ const mapStateToProps = state => {
     smurfs: state.smurfs,
     fetchingSmurfs: state.fetchingSmurfs,
     addingSmurf: state.addingSmurfs,
-    deletingSmurf: state.deletingSmurfs
+    deletingSmurf: state.deletingSmurfs,
+    updatingingSmurf: state.updatingSmurf
   }
 }
 
@@ -51,7 +53,8 @@ const matchDispatchToProps = dispatch => {
     {
       fetchSmurfs,
       addSmurf,
-      deleteSmurf
+      deleteSmurf,
+      updateSmurf
     },
     dispatch
   )

@@ -74,6 +74,22 @@ export const smurfsReducer = (state = initialState, action) => {
         ...state,
         deletingSmurf: false
       }
+      case types.UPDATE_SMURF_START:
+      return {
+        ...state,
+        updatingSmurf: true
+      }
+    case types.UPDATE_SMURF_SUCCESSFUL: {
+      return {
+        ...state,
+        smurfs: action.payload
+      }
+    }
+    case types.UPDATE_SMURF_END:
+      return {
+        ...state,
+        updatingSmurf: false
+      }
     default:
       return state
   }
