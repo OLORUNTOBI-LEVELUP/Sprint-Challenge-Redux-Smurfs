@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Smurf from "./Smurf"
-import { fetchSmurfs } from "../actions/index"
+import { fetchSmurfs, addSmurf } from "../actions/index"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 /*
@@ -16,7 +16,7 @@ class App extends Component {
     this.props.fetchSmurfs();
   }
   render() {
-    const { smurfs, fetchingSmurfs } = this.props
+    const { smurfs, fetchingSmurfs, addSmurf } = this.props
     if (fetchingSmurfs) {
       return <div>Loading Smurfs...</div>
     }
