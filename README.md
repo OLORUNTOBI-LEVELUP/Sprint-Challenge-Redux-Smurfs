@@ -22,9 +22,9 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 
 ## Project Set Up
 
@@ -58,8 +58,8 @@ This file contains an **API** that you are going to be interfacing with. Below i
 
 Your finished project must include all of the following requirements:
 
-- [ ] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
-- [ ] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
+- [X] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
+- [X] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
 
 ```js
 return dispatch => {
