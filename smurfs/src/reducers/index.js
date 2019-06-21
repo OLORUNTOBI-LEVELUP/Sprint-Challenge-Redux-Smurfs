@@ -1,3 +1,5 @@
+import * as types from "../actions"
+
 /*
   Be sure to import in all of the action types from `../actions`
 */
@@ -23,6 +25,23 @@
 */
 export const smurfsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.FETCH_SMURFS_START:
+      return {
+        ...state,
+        fetchingSmurfs: true
+      }
+    case types.FETCH_SMURFS_SUCCESSFUL:
+      return {
+        ...state,
+        smurfs: action.payload,
+        fetchingSmurfs: false
+      }
+    case types.FETCH_SMURFS_FAIL:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: action.payload
+      }
     default:
       return state
   }
